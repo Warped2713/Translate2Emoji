@@ -6,7 +6,7 @@ document.getElementById('source').addEventListener('change', function() {
   source = document.getElementById('source').value;
   let output = '';
   for (let c=0; c < source.length; c++) {
-    if (source[c].strip() == "") {
+    if (source[c].trim() == "") {
         output += " ";
     } else {
         output += prefix + source[c].toLowerCase() + suffix + " ";
