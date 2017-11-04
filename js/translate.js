@@ -8,8 +8,8 @@ let delim = '::';
 let newline = '&#13;&#10;';
 
 /* Initialization */
-document.getElementById('prefix').value = prefix;
-document.getElementById('suffix').value = suffix;
+document.getElementById('pre').value = prefix;
+document.getElementById('post').value = suffix;
 document.getElementById('source').value = source;
 document.getElementById('charset').value = charset;
 document.getElementById('special').value = '? :: qm' + newline + '! :: ex';
