@@ -109,7 +109,7 @@ let preset = {
   
   'unown': {
     prefix: ':',
-    suffix: '_unknown:',
+    suffix: '_unown:',
     charset: 'abcdefghijklmnopqrstuvwxyz!?',
     special: { '!':'ex', '?':'qm' },
     delim: '::',
