@@ -5,12 +5,14 @@ let charset = 'abcdefghijklmnopqrstuvwxyz1234567890!?';
 let special = { '?':'qm', '!':'ex' };
 let delim = '::';
 
+let newline = '&#13;&#10;';
+
 /* Initialization */
 document.getElementById('prefix').value = prefix;
 document.getElementById('suffix').value = suffix;
 document.getElementById('source').value = source;
 document.getElementById('charset').value = charset;
-document.getElementById('special').value = '? :: qm\n! :: ex';
+document.getElementById('special').value = '? :: qm' + newline + '! :: ex';
 document.getElementById('delim').value = delim;
 
 
