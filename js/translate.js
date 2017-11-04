@@ -1,17 +1,23 @@
 let prefix = ':';
-let suffix = ':';
+let suffix = '_unknown:';
 let source = '';
 let charset = 'abcdefghijklmnopqstuvwxyz1234567890!?';
+let special = '! :: ex\n? :: qm';
+let delim = '::';
 
 document.getElementById('source').addEventListener('change', function() {
-  source = document.getElementById('source').value;
+  source = document.getElementById('source').value.toLowerCase();
   let output = '';
   for (let c=0; c < source.length; c++) {
       if (charset.includes(source[c])) {
           if (source[c].trim() == "") {
               output += " ";
           } else {
-              output += prefix + source[c].toLowerCase() + suffix + " ";
+              if (special.includes(source[c])) {
+                  output += prefix + special[source[c]] + suffix + " ";
+              } else {
+                  output += prefix + source[c] + suffix + " ";
+              }
           }
       }
   }
@@ -29,4 +35,17 @@ document.getElementById('post').addEventListener('change', function() {
 
 document.getElementById('charset').addEventListener('change', function() {
   charset = document.getElementById('charset').value;
+});
+
+document.getElementById('special').addEventListener('change', function() {
+  text = document.getElementById('special').value;
+  lines = text.split('\n');
+  for (let i=0; i<lines.length; i++) {
+     let v = lines[i].split(delim);
+    special[v[0].trim()] = v[1].trim();
+  }
+});
+
+document.getElementById('delim').addEventListener('change', function() {
+  delim = " " + document.getElementById('delim').value + " ";
 });
