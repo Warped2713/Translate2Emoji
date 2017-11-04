@@ -6,68 +6,73 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="css/normalize.css" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet" media="all">
     <!--[if lt IE 9]><script src="js/html5shiv.js" media="all"></script><![endif]-->
     <script defer src="js/translate.js" media="all"></script>
-    <style>
-        .prefix, .charset, .suffix, .special {
-            padding: 4px;
-        }
-        .prefix { background-color: rgba(255, 0, 0, 0.5); }
-        .suffix { background-color: rgba(0, 255, 0, 0.5); }
-        .charset { background-color: rgba(255, 255, 0, 0.5); }
-        .special { background-color: rgba(0, 0, 255, 0.5); }
-    </style>
 </head>
 <body>
     <header role="banner">
         <h1>Translate2Emoji</h1>
+        <p>Translate a string of plain text into a string of Discord-ready emoji identifiers.</p>
+        <small>For further information, please see <a href="https://github.com/Warped2713/Translate2Emoji/">Translate2Emoji on GitHub</a>.</small>
     </header>
 
     <div class="wrap">
         <main role="main">
-            <div>
-                <h2>Example: REGIONAL INDICATORS</h2>
-                <span class="prefix">:regional_indicator_</span><span class="charset">a</span><span class="suffix">:&nbsp;</span>
-            </div>
-            <div>
-                <h2>Translator</h2>
-            <fieldset>
-                <label class="prefix" for="pre">Prefix</label>
+          <div>
+              <h2>Translator</h2>
+              <div id="translator" class="grid">
+                <fieldset>
+                    <label for="source">Text to Translate</label>
+                    <textarea id="source" name="source"></textarea>
+                </fieldset>
+                <fieldset>
+                    <label for="output">Translation</label>
+                    <textarea id="output" name="output" readonly></textarea>
+                </fieldset>
+              </div>
+          </div>
+          <div>
+              <h2>Preset Options</h2>
+              <div id="presets" class="grid">
+                <fieldset>
+                  <label for="emojiset">Select an Emoji set</label>
+                  <select id="emojiset" name="emojiset">
+                    <option value="default">Default (Numbers, Symbols, Regional Indicators)</option>
+                    <option value="regional">Regional Indicators (Alphabet)</option>
+                    <option value="unown">Unown</option>
+                  </select>
+                </fieldset>
+              </div>
+          </div>
+          <div>
+            <h2>Custom Options</h2>
+            <div id="custom" class="grid">
+              <fieldset>
+                <label for="pre">Prefix</label>
                 <input id="pre" name="pre" type="text">
                 
-                <label class="suffix" for="post">Suffix</label>
+                <label for="post">Suffix</label>
                 <input id="post" name="post" type="text">
                 
-                <label class="charset" for="charset">Character Set</label>
+                <label for="charset">Character Set</label>
                 <input id="charset" name="charset" type="text">
-            </fieldset>
-            <fieldset>
-                <label for="delim">Delimiter</label>
-                <input id="delim" name="delim" type="text">
-                
-                <label class="special" for="special">Special Replacements (one per line, in the form A {delim} B)</label>
-                <textarea id="special" name="special"></textarea>
                 
                 <label for="space">Space Replacement</label>
                 <input id="space" name="space" type="text">
-            </fieldset>
-            <fieldset>
-                <label for="source">Text to Translate</label>
-                <textarea id="source" name="source"></textarea>
-            </fieldset>
-            <fieldset>
-                <label for="output">Translation</label>
-                <textarea id="output" name="output" readonly></textarea>
-            </fieldset>
+              </fieldset>
+              <fieldset>
+                <label for="delim">Delimiter</label>
+                <input id="delim" name="delim" type="text">
+                
+                <label for="special">Special Replacements</label>
+                <small>(one per line, in the form A {delimiter} B)</small>
+                <textarea id="special" name="special"></textarea>
+              </fieldset>
             </div>
+          </div>
         </main>
     </div>
-
-    <footer role="contentinfo">
-        <address>
-          <p>For further information, please see <a href="https://github.com/Warped2713/Translate2Emoji/">Translate2Emoji on GitHub</a>.</p>
-        </address>
-    </footer>
 
 </body>
 </html>

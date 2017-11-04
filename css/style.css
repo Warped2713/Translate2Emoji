@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+}
+
+#translator {
+  grid-template-rows: 256px;
+}
+
+#presets {
+  grid-template-columns: 1fr;
+}
+
+#custom {
+}
+
+fieldset {
+  padding: 1em;
+  margin: 0;
+}
+
+label {
+  display: block;
+  width: 98%;
+  margin: 0 auto;
+  padding: 4px;
+  background-color: rgba(200,200,200,0.5);
+}
+
+input, textarea, select {
+  display: block;
+  margin: 0.5em auto 1em auto;
+  width: 98%;
+}
+
+textarea {
+  resize: none;
+  height: 50%;
+}
+
+#translator textarea {
+  height: 70%;
+}
+
+body {
+  padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+  }
+  
+  #translator {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,256px);
+  }
+  
+  #presets {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
