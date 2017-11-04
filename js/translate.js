@@ -7,13 +7,13 @@ document.getElementById('source').addEventListener('change', function() {
   source = document.getElementById('source').value;
   let output = '';
   for (let c=0; c < source.length; c++) {
-    // TODO: Check if c is in charset
-    if (source[c].trim() == "") {
-        output += " ";
-    } else {
-        output += prefix + source[c].toLowerCase() + suffix + " ";
-    }
-    console.log(source[c]);
+      if (charset.includes(source[c])) {
+          if (source[c].trim() == "") {
+              output += " ";
+          } else {
+              output += prefix + source[c].toLowerCase() + suffix + " ";
+          }
+      }
   }
   console.log(output);
   document.getElementById('output').value = output;
