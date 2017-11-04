@@ -18,9 +18,9 @@ document.getElementById('special').value = '? :: qm\n! :: ex';
 document.getElementById('delim').value = delim;
 
 
-/* On Change events */
+/* Main Functions */
 
-document.getElementById('source').addEventListener('change', function() {
+let translate = function() {
   source = document.getElementById('source').value.toLowerCase();
   let output = '';
   for (let c=0; c < source.length; c++) {
@@ -38,7 +38,17 @@ document.getElementById('source').addEventListener('change', function() {
   }
   console.log(output);
   document.getElementById('output').value = output;
-});
+};
+
+/* Run an example */
+source = "What is an unknown?";
+document.getElementById('source').value = source;
+translate();
+
+
+/* On Change events */
+
+document.getElementById('source').addEventListener('change', translate);
 
 document.getElementById('pre').addEventListener('change', function() {
   prefix = document.getElementById('pre').value;
