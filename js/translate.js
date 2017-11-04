@@ -121,14 +121,14 @@ let updateSet = function() {
   document.getElementById('pre').value = prefix = preset[set].prefix;
   document.getElementById('post').value = suffix = preset[set].suffix;
   document.getElementById('charset').value = charset = preset[set].charset;
-  special = preset[set].special;
-  document.getElementById('special').value = specialToString(special);
   document.getElementById('delim').value = delim = preset[set].delim;
   document.getElementById('space').value = space = preset[set].space;
+  special = preset[set].special;
+  document.getElementById('special').value = specialToString(special);
 };
 
 /* Run an example */
-updateSet();
+updateSet(); console.log(delim);
 source = "Let's write some emoji text!";
 document.getElementById('source').value = source;
 translate();
