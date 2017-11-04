@@ -1,8 +1,8 @@
 let prefix = ':';
 let suffix = '_unknown:';
 let source = '';
-let charset = 'abcdefghijklmnopqstuvwxyz1234567890!?';
-let special = '! :: ex\n? :: qm';
+let charset = 'abcdefghijklmnopqrstuvwxyz1234567890!?';
+let special = { '?':'qm', '!':'ex' };
 let delim = '::';
 
 document.getElementById('source').addEventListener('change', function() {
@@ -13,7 +13,7 @@ document.getElementById('source').addEventListener('change', function() {
           if (source[c].trim() == "") {
               output += " ";
           } else {
-              if (special.includes(source[c])) {
+              if (special.hasOwnProperty(source[c])) {
                   output += prefix + special[source[c]] + suffix + " ";
               } else {
                   output += prefix + source[c] + suffix + " ";
@@ -40,6 +40,7 @@ document.getElementById('charset').addEventListener('change', function() {
 document.getElementById('special').addEventListener('change', function() {
   text = document.getElementById('special').value;
   lines = text.split('\n');
+  special = {};
   for (let i=0; i<lines.length; i++) {
      let v = lines[i].split(delim);
     special[v[0].trim()] = v[1].trim();
