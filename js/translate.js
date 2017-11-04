@@ -6,6 +6,7 @@ let special = { '?':'qm', '!':'ex' };
 let delim = '::';
 
 //let newline = '&#13;&#10;';
+let space = '\xa0';
 
 /* Initialization */
 document.getElementById('pre').value = prefix;
@@ -25,7 +26,7 @@ document.getElementById('source').addEventListener('change', function() {
   for (let c=0; c < source.length; c++) {
       if (charset.includes(source[c])) {
           if (source[c].trim() == "") {
-              output += " ";
+              output += space;
           } else {
               if (special.hasOwnProperty(source[c])) {
                   output += prefix + special[source[c]] + suffix + " ";
