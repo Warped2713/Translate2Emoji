@@ -52,14 +52,17 @@ document.getElementById('source').addEventListener('change', translate);
 
 document.getElementById('pre').addEventListener('change', function() {
   prefix = document.getElementById('pre').value;
+  translate();
 });
 
 document.getElementById('post').addEventListener('change', function() {
   suffix = document.getElementById('post').value;
+  translate();
 });
 
 document.getElementById('charset').addEventListener('change', function() {
   charset = document.getElementById('charset').value;
+  translate();
 });
 
 document.getElementById('special').addEventListener('change', function() {
@@ -70,12 +73,15 @@ document.getElementById('special').addEventListener('change', function() {
      let v = lines[i].split(delim);
     special[v[0].trim()] = v[1].trim();
   }
+  translate();
 });
 
 document.getElementById('delim').addEventListener('change', function() {
   delim = " " + document.getElementById('delim').value + " ";
+  translate();
 });
 
 document.getElementById('space').addEventListener('change', function() {
   space = document.getElementById('space').value;
+  translate();
 });
