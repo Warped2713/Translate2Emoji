@@ -25,13 +25,13 @@ let translate = function() {
   let output = '';
   for (let c=0; c < source.length; c++) {
     if (source[c].trim() == "") {
-        output += space + ' ';
+        output += ' ' + space + ' ';
     } else {
       if (charset.includes(source[c])) {
         if (special.hasOwnProperty(source[c])) {
-            output += prefix + special[source[c]] + suffix + " ";
+            output += prefix + special[source[c]] + suffix;
         } else {
-            output += prefix + source[c] + suffix + " ";
+            output += prefix + source[c] + suffix;
         }
       }
     }
