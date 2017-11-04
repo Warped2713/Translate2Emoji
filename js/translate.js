@@ -1,5 +1,5 @@
 let prefix = ':';
-let suffix = '_unknown:';
+let suffix = '_unown:';
 let source = '';
 let charset = 'abcdefghijklmnopqrstuvwxyz1234567890!?';
 let special = { '?':'qm', '!':'ex' };
@@ -41,7 +41,7 @@ let translate = function() {
 };
 
 /* Run an example */
-source = "What is an unknown?";
+source = "What is an unown?";
 document.getElementById('source').value = source;
 translate();
 
