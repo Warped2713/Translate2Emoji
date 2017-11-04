@@ -5,6 +5,17 @@ let charset = 'abcdefghijklmnopqrstuvwxyz1234567890!?';
 let special = { '?':'qm', '!':'ex' };
 let delim = '::';
 
+/* Initialization */
+document.getElementById('prefix').value = prefix;
+document.getElementById('suffix').value = suffix;
+document.getElementById('source').value = source;
+document.getElementById('charset').value = charset;
+document.getElementById('special').value = special;
+document.getElementById('delim').value = delim;
+
+
+/* On Change events */
+
 document.getElementById('source').addEventListener('change', function() {
   source = document.getElementById('source').value.toLowerCase();
   let output = '';
