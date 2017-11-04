@@ -16,7 +16,7 @@ document.getElementById('charset').value = charset;
 //document.getElementById('special').value = '? :: qm' + newline + '! :: ex';
 document.getElementById('special').value = '? :: qm\n! :: ex';
 document.getElementById('delim').value = delim;
-
+document.getElementById('space').value = space;
 
 /* Main Functions */
 
@@ -74,4 +74,8 @@ document.getElementById('special').addEventListener('change', function() {
 
 document.getElementById('delim').addEventListener('change', function() {
   delim = " " + document.getElementById('delim').value + " ";
+});
+
+document.getElementById('space').addEventListener('change', function() {
+  space = document.getElementById('space').value;
 });
