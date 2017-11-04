@@ -10,7 +10,7 @@ document.getElementById('prefix').value = prefix;
 document.getElementById('suffix').value = suffix;
 document.getElementById('source').value = source;
 document.getElementById('charset').value = charset;
-document.getElementById('special').value = special;
+document.getElementById('special').value = '? :: qm\n! :: ex';
 document.getElementById('delim').value = delim;
 
 
