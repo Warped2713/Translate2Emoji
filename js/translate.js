@@ -114,6 +114,15 @@ let preset = {
     special: { '!':'ex', '?':'qm' },
     delim: '::',
     space: '\xa0'
+  },
+  
+  'blob': {
+    prefix: ':',
+    suffix: 'blob:',
+    charset: 'abcdefghijklmnopqrstuvwxyz0123456789',
+    special: { },
+    delim: '::',
+    space: '\xa0'
   }
 };
 
